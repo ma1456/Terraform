@@ -9,8 +9,8 @@ resource "aws_vpc" "myvpc" {
 # lets create a web1 subnet
 resource "aws_subnet" "web1" {
     vpc_id            = aws_vpc.myvpc.id
-    cidr_block        = "192.168.0.0/24"
-    availability_zone = "ap-south-1a"
+    cidr_block        = web1_cidr_range
+    availability_zone = web1_az
 
     tags = {
       "Name"          = "web1.tf"
@@ -19,8 +19,8 @@ resource "aws_subnet" "web1" {
 # lets create a web2 subnet
 resource "aws_subnet" "web2" {
     vpc_id            = aws_vpc.myvpc.id
-    cidr_block        = "192.168.1.0/24"
-    availability_zone = "ap-south-1b"
+    cidr_block        = web2_cidr_range
+    availability_zone = web2_az
 
     tags = {
       "Name"          = "web2.tf"
@@ -30,8 +30,8 @@ resource "aws_subnet" "web2" {
 # lets create a db1 subnet
 resource "aws_subnet" "db1" {
     vpc_id            = aws_vpc.myvpc.id
-    cidr_block        = "192.168.2.0/24"
-    availability_zone = "ap-south-1a"
+    cidr_block        = db1_cidr_range
+    availability_zone = db1_az
 
     tags = {
       "Name"          = "db1.tf"
@@ -40,8 +40,8 @@ resource "aws_subnet" "db1" {
 # lets create a db2 subnet
 resource "aws_subnet" "db22" {
     vpc_id            = aws_vpc.myvpc.id
-    cidr_block        = "192.168.3.0/24"
-    availability_zone = "ap-south-1b"
+    cidr_block        = db2_cidr_range
+    availability_zone = db2_az
 
     tags = {
       "Name"          = "db2.tf"
